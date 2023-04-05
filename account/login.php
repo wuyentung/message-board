@@ -13,7 +13,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
 
 // check authentication
 // Processing form data when form is submitted
-if($_SERVER["REQUEST_METHOD"] == "POST"){
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate username
     $username_err = validate_username($_POST["username"]);
     if (!isset($username_err)) {
@@ -39,7 +39,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $_SESSION["username"] = $username;
             // Redirect user to welcome page
             unset($db); // shutdown database
-            header("location: welcome.php");
+            header("location: ../home-page/welcome.php");
         } else { // password incorrect
             $password_err = nl2br("Invalid password, please checkout your username and password one more time\n");
         }
